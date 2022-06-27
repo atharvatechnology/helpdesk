@@ -1152,6 +1152,8 @@ def ticket_list(request):
     if helpdesk_settings.HELPDESK_KB_ENABLED:
         kbitem_choices = [(item.pk, str(item)) for item in KBItem.objects.all()]
         kbitem = KBItem.objects.all()
+    # helpdesk_settings.HELPDESK_NAVIGATION_ENABLED and user.is_authenticated or user|is_helpdesk_staff
+    # if hasattr(settings, HELPDESK_NAVIGATION_ENABLED)
 
     return render(request, 'helpdesk/ticket_list.html', dict(
         context,

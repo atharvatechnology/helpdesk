@@ -34,6 +34,42 @@
                 </div>
             {% endif %}
 
+            {% comment %} This is extra part {% endcomment %}
+            {% comment %} {% if helpdesk_settings.HELPDESK_USERS_TICKETS_PUBLIC %} {% endcomment %}
+                {% if user.is_authenticated %}
+                <div class="col-xs-12">
+                <div class="panel panel-default">
+
+                <div class="panel-body">
+                    <h2 name='submit'>{% trans "My tickets" %}</h2>
+                <p>{% trans "You can view your previous tickets here." %}</p>
+                <div><table class="table table-bordered">
+                <tbody><tr>
+                                    <th>{% trans "Title" %}</th>
+                                    <th>{% trans "Status" %}</th>
+                                    <th>{% trans "Action" %}</th>
+                                    </tr>
+
+                {% for ticket in tickets %}
+                    <tr>
+                            <td>{{ ticket.title }}</td>
+                            <td>{{ ticket.status }}</td>
+                            <td><a href="{% url 'helpdesk:public_view' %}?ticket={{ticket.id}}&email={{user.email}}">{% trans "Show ticket" %}</td>
+                        </tr>
+                {% empty %}
+                <tr><td>{% trans "You don't have any tickets" %}</td><td></td><td></td></tr>
+                {% endfor %}
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+                </div>
+                </div>
+                {% endif %}
+                {% comment %} {% endif %} {% endcomment %}
+
+            {% comment %} extra part end {% endcomment %}
+
             <div class="col-sm">
                 <div class="panel panel-default">
                     <div class="panel-body">

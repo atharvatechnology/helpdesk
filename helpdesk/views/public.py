@@ -157,6 +157,9 @@ class Homepage(CreateTicketView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['kb_categories'] = huser_from_request(self.request).get_allowed_kb_categories()
+        if not self.request.user.is_anonymous:
+            context['tickets'] = Ticket.objects.filter(submitter_email=self.request.user.email)
+            
         return context
 
 

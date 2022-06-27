@@ -12,6 +12,7 @@ docs/doctrees/*
 .directory
 *.swp
 .idea
+build/
 
 # ignore demo attachments that user might have added
 helpdesk/attachments/

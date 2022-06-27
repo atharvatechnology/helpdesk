@@ -160,6 +160,9 @@ HELPDESK_STAFF_ONLY_TICKET_OWNERS = getattr(settings, 'HELPDESK_STAFF_ONLY_TICKE
 # only show staff users in ticket cc drop-down
 HELPDESK_STAFF_ONLY_TICKET_CC = getattr(settings, 'HELPDESK_STAFF_ONLY_TICKET_CC', False)
 
+HELPDESK_VIEW_A_TICKET_PUBLIC = False
+
+
 # allow the subject to have a configurable template.
 HELPDESK_EMAIL_SUBJECT_TEMPLATE = getattr(
     settings, 'HELPDESK_EMAIL_SUBJECT_TEMPLATE',

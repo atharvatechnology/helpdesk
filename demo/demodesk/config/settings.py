@@ -226,6 +226,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# HELPDESK_VIEW_A_TICKET_PUBLIC = False # It allows to show view a ticket section present in homepage 
+# HELPDESK_ALLOW_NON_STAFF_TICKET_UPDATE = True #Allows every user to show dashboard and every other stuffs like all tickets, reports.
+
+
+# HELPDESK_VIEW_A_TICKET_PUBLIC = True # It allows to show view a ticket section present in homepage  
+
+HELPDESK_USERS_TICKETS_PUBLIC = True
+
 # Fixtures
 # https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-FIXTURE_DIRS
 # - This is only necessary to make the demo project work, not needed for
